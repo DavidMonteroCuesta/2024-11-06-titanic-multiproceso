@@ -10,9 +10,8 @@ public interface Lectura {
     static String leer(File fichero) {
         String contenido = VACIO;
         try (Scanner sc = new Scanner(fichero)){
-            while (sc.hasNextLine()) {
+            while (sc.hasNextLine()) 
                 contenido += sc.nextLine() + SEPARADOR;
-            }
         } catch (FileNotFoundException e) {
             System.err.println(MSG_ERROR_ENCONTRAR_F);
         }

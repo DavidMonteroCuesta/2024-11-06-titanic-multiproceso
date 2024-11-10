@@ -23,9 +23,8 @@ public class Comando{
             StringBuilder output = new StringBuilder();
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
-            while ((line = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null)
                 output.append(line).append(SALTO_DE_LINEA);
-            }
 
             int exitVal = process.waitFor();
             if (exitVal != 0) {
@@ -43,9 +42,8 @@ public class Comando{
     private String[] obtenerComando(){
         String[] comando = new String[this.parametros.length + VALOR_NUMERICO_COMANDO];
         comando[VALOR_CERO] = this.nombre;
-        for (int i = VALOR_NUMERICO_COMANDO; i <= parametros.length; i++) {
+        for (int i = VALOR_NUMERICO_COMANDO; i <= parametros.length; i++)
             comando[i] = parametros[i-VALOR_NUMERICO_COMANDO];
-        }
         return comando;
     }
 

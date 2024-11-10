@@ -12,9 +12,7 @@ public interface Escritura {
 
     static void escribir(String rutaFichero, String contenido) {
         try (FileOutputStream fos = new FileOutputStream(rutaFichero, true)) {
-            String datos = contenido;
-            byte[] byteArray = datos.getBytes();
-            fos.write(byteArray);
+            fos.write(contenido.getBytes());
         } catch (IOException e) {
             System.out.println(MSG_ERROR_ESCRITURA_FICHERO + e.getMessage());
         }
